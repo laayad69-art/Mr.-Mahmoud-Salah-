@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دروس اللغة العربية | الأستاذ محمود صلاح</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d4a8a;
+            --accent-color: #c53030;
+            --light-color: #f8f9fa;
+            --dark-color: #2d3748;
+            --success-color: #2a9d8f;
+            --gold-color: #d4af37;
+            --arabic-blue: #1a365d;
+            --arabic-green: #2a9d8f;
+            --arabic-gold: #d4af37;
+            --arabic-red: #c53030;
+            --arabic-sand: #f5deb3;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Almarai', 'Cairo', sans-serif;
+            font-weight: 800;
+            color: var(--arabic-blue);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--arabic-red), var(--arabic-gold));
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--arabic-red), #e53e3e);
+            color: white;
+            box-shadow: 0 4px 15px rgba(197, 48, 48, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #9b2c2c, #c53030);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(197, 48, 48, 0.2);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--arabic-blue), #2d4a8a);
+            color: white;
+            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #1a252f, #2c3e50);
+            transform: translateY(-3px);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--arabic-blue), var(--arabic-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+            color: var(--arabic-blue);
+            font-weight: 800;
+        }
+        
+        .logo-text span {
+            color: var(--arabic-red);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--arabic-red), var(--arabic-gold));
+            bottom: 0;
+            right: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--arabic-red);
+        }
+        
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--arabic-blue);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232a9d8f' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .hero-content h2 {
+            font-size: 3.2rem;
+            color: white;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content .teacher-name {
+            font-family: 'Almarai', serif;
+            font-size: 2.5rem;
+            color: var(--arabic-gold);
+            margin: 10px 0 30px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .hero-content .teacher-name::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--arabic-red), var(--arabic-gold));
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            border-radius: 2px;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #e2e8f0;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeIn 1s ease 0.6s both;
+        }
+        
+        /* Teacher Profile */
+        .teacher-profile-section {
+            background-color: white;
+        }
+        
+        .teacher-profile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .teacher-photo-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ddd;
+        }
+        
+        .teacher-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-placeholder {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        
+        .photo-placeholder i {
+            font-size: 4rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .photo-placeholder p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        .teacher-photo-container:hover .teacher-photo {
+            transform: scale(1.05);
+        }
+        
+        .teacher-info h3 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--arabic-blue);
+            font-family: 'Almarai', serif;
+            font-weight: 800;
+        }
+        
+        .teacher-name-large {
+            font-family: 'Almarai', serif;
+            font-size: 2.8rem;
+            color: var(--arabic-red);
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .teacher-name-large::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--arabic-red), var(--arabic-gold));
+            bottom: 0;
+            right: 0;
+            border-radius: 2px;
+        }
+        
+        .teacher-title {
+            color: var(--arabic-green);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .teacher-bio {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            line-height: 1.8;
+        }
+        
+        .teacher-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--arabic-blue);
+            display: block;
+            font-family: 'Almarai', serif;
+        }
+        
+        .stat-label {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .contact-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--arabic-blue), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(26, 54, 93, 0.2);
+        }
+        
+        .contact-icon:hover {
+            background: linear-gradient(135deg, var(--arabic-red), #e53e3e);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(197, 48, 48, 0.3);
+        }
+        
+        /* Subjects Section */
+        .subjects-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .subjects-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .subject-main {
+            background-color: white;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--arabic-red);
+        }
+        
+        .subject-icon-main {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--arabic-blue), var(--arabic-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 3rem;
+            box-shadow: 0 8px 20px rgba(26, 54, 93, 0.2);
+        }
+        
+        .subject-main h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--arabic-blue);
+            font-family: 'Almarai', serif;
+        }
+        
+        .subject-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .detail-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-right: 4px solid var(--arabic-green);
+            transition: transform 0.3s ease;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detail-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--arabic-blue);
+            font-weight: 700;
+        }
+        
+        .detail-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Grades Section */
+        .grades-section {
+            background-color: white;
+        }
+        
+        .grades-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .grade-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .grade-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--arabic-red), var(--arabic-gold));
+        }
+        
+        .grade-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--arabic-green);
+        }
+        
+        .grade-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--arabic-blue), var(--arabic-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 6px 15px rgba(26, 54, 93, 0.2);
+        }
+        
+        .grade-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--arabic-blue);
+            font-weight: 700;
+        }
+        
+        .grade-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Booking Section */
+        .booking-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .booking-form {
+            background: linear-gradient(135deg, white 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--arabic-blue);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background-color: white;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--arabic-green);
+            box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: left 15px center;
+            background-size: 16px;
+            padding-left: 40px;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--arabic-blue) 0%, #1a252f 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232a9d8f' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .contact-section .section-title h2 {
+            color: white;
+        }
+        
+        .contact-section .section-title p {
+            color: #cbd5e0;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-card:hover {
+            background-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-icon-large {
+            font-size: 2.5rem;
+            color: var(--arabic-gold);
+            margin-bottom: 20px;
+        }
+        
+        .contact-card h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .contact-card p {
+            color: #cbd5e0;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-card a:hover {
+            color: var(--arabic-gold);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #a0aec0;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232a9d8f' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, var(--arabic-red), var(--arabic-gold));
+            bottom: 0;
+            right: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-right: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: linear-gradient(135deg, var(--arabic-red), #e53e3e);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 48, 48, 0.3);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #718096;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .developer-credit {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--arabic-gold);
+        }
+        
+        .developer-credit a {
+            color: var(--arabic-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .developer-credit a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Response Message */
+        .response-message {
+            text-align: center;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .success {
+            background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+            color: #22543d;
+            border: 1px solid #9ae6b4;
+        }
+        
+        .error {
+            background: linear-gradient(135deg, #fed7d7 0%, #fc8181 100%);
+            color: #742a2a;
+            border: 1px solid #fc8181;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .teacher-profile,
+            .grades-grid,
+            .contact-content,
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-content h2 {
+                font-size: 2.8rem;
+            }
+            
+            .subject-details {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                z-index: 999;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content .teacher-name {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .teacher-profile {
+                grid-template-columns: 1fr;
+            }
+            
+            .teacher-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .teacher-name-large {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .grades-grid,
+            .contact-content,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .booking-form {
+                padding: 30px 20px;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .subject-main {
+                padding: 30px 20px;
+            }
+            
+            .teacher-name-large {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+        
+        /* Loading Spinner */
+        .loading-spinner {
+            display: none;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--arabic-green);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>دروس اللغة العربية</h1>
+                    <span>الأستاذ محمود صلاح</span>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#about">عن الأستاذ</a></li>
+                    <li><a href="#subjects">المادة الدراسية</a></li>
+                    <li><a href="#grades">المستويات</a></li>
+                    <li><a href="#booking">حجز درس</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="animate__animated animate__fadeInDown">إتقان اللغة العربية بتميز</h2>
+                <div class="teacher-name animate__animated animate__fadeIn">الأستاذ محمود صلاح</div>
+                <p class="animate__animated animate__fadeInUp">دروس متخصصة في اللغة العربية للمراحل الإعدادية والثانوية (نظام عام - نظام أزهري) مع مدرس متخصص ذو خبرة</p>
+                <div class="hero-buttons animate__animated animate__fadeIn">
+                    <a href="#booking" class="btn btn-primary">احجز درسك الآن</a>
+                    <a href="#about" class="btn btn-secondary">تعرف على الأستاذ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher Profile Section -->
+    <section class="section-padding teacher-profile-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>الأستاذ محمود صلاح</h2>
+                <p>خبير تعليمي متخصص في تدريس اللغة العربية للمراحل الدراسية المختلفة</p>
+            </div>
+            
+            <div class="teacher-profile">
+                <div class="teacher-photo-container">
+                    <img src="FB_IMG_1769842959746.jpg" alt="صورة الأستاذ محمود صلاح" class="teacher-photo" id="teacherPhoto">
+                </div>
+                
+                <div class="teacher-info">
+                    <div class="teacher-name-large">محمود صلاح</div>
+                    <p class="teacher-title">خبير في تدريس اللغة العربية للمراحل الإعدادية والثانوية (نظام عام - نظام أزهري)</p>
+                    
+                    <div class="teacher-bio">
+                        <p>الأستاذ محمود صلاح، مدرس محترف متخصص في تقديم دروس اللغة العربية للمراحل الإعدادية والثانوية (نظام عام ونظام أزهري). يتميز بأسلوب تدريس مبسط وفعال يساعد الطلاب على فهم قواعد اللغة العربية وآدابها بشكل سهل وشامل.</p>
+                        <p>يتبع أحدث الطرق التعليمية والتقنيات الحديثة في الشرح والتواصل، مع التركيز على احتياجات كل طالب على حدة لضمان تحقيق أفضل النتائج الدراسية.</p>
+                    </div>
+                    
+                    <div class="teacher-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">طالب نجح</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">رضا أولياء الأمور</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">نظام تعليمي</span>
+                        </div>
+                    </div>
+                    
+                    <div class="qualifications">
+                        <h4><i class="fas fa-graduation-cap"></i> المؤهلات والخبرات:</h4>
+                        <ul>
+                            <li>خبرة واسعة في تدريس اللغة العربية</li>
+                            <li>متخصص في نظامي التعليم (العام والأزهري)</li>
+                            <li>استخدام وسائل تعليمية حديثة ومبتكرة</li>
+                            <li>متابعة دقيقة لمستوى الطالب وتقدمه</li>
+                            <li>توفير مواد تعليمية إضافية واختبارات دورية</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-icons">
+                        <a href="tel:01157927970" class="contact-icon" title="اتصل الآن">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="https://wa.me/201157927970" class="contact-icon" title="راسلنا على واتساب">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://t.me/Yazar_7" class="contact-icon" title="تلجرام الأستاذ">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section class="section-padding subjects-section" id="subjects">
+        <div class="container">
+            <div class="section-title">
+                <h2>المادة الدراسية</h2>
+                <p>نقدم دروسًا متخصصة في اللغة العربية فقط</p>
+            </div>
+            
+            <div class="subjects-container">
+                <div class="subject-main">
+                    <div class="subject-icon-main">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>اللغة العربية</h3>
+                    <p>دروس متكاملة في جميع فروع اللغة العربية: النحو، الصرف، البلاغة، الأدب، النصوص، والتعبير. نغطي جميع المناهج الدراسية للمراحل الإعدادية والثانوية بنظاميها العام والأزهري.</p>
+                    
+                    <div class="subject-details">
+                        <div class="detail-card">
+                            <h4>النحو والصرف</h4>
+                            <p>شرح قواعد النحو والصرف بأسلوب مبسط مع تمارين تطبيقية</p>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <h4>البلاغة والأدب</h4>
+                            <p>دراسة البلاغة العربية وأنواع الأدب مع تحليل النصوص</p>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <h4>النصوص والمطالعة</h4>
+                            <p>تحليل النصوص الأدبية وفهم معانيها وأساليبها</p>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <h4>التعبير والإنشاء</h4>
+                            <p>تنمية مهارات الكتابة والتعبير باللغة العربية الفصيحة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grades Section -->
+    <section class="section-padding grades-section" id="grades">
+        <div class="container">
+            <div class="section-title">
+                <h2>المستويات الدراسية</h2>
+                <p>نقدم دروس اللغة العربية لجميع المراحل التعليمية التالية</p>
+            </div>
+            
+            <div class="grades-grid">
+                <div class="grade-card">
+                    <div class="grade-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h4>الصف الأول الإعدادي</h4>
+                    <p>دروس في اللغة العربية للمرحلة الإعدادية الأولى مع التركيز على الأساسيات</p>
+                    <a href="#booking" class="btn btn-primary">احجز الآن</a>
+                </div>
+                
+                <div class="grade-card">
+                    <div class="grade-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h4>الصف الثاني الإعدادي</h4>
+                    <p>شرح مبسط لمنهج اللغة العربية مع التركيز على الفهم والاستيعاب</p>
+                    <a href="#booking" class="btn btn-primary">احجز الآن</a>
+                </div>
+                
+                <div class="grade-card">
+                    <div class="grade-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>الصف الثالث الإعدادي</h4>
+                    <p>إعداد كامل لامتحانات الشهادة الإعدادية (عام - أزهري) في اللغة العربية</p>
+                    <a href="#booking" class="btn btn-primary">احجز الآن</a>
+                </div>
+                
+                <div class="grade-card">
+                    <div class="grade-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h4>الصف الأول الثانوي</h4>
+                    <p>دروس متخصصة في اللغة العربية حسب الشعبة الدراسية</p>
+                    <a href="#booking" class="btn btn-primary">احجز الآن</a>
+                </div>
+                
+                <div class="grade-card">
+                    <div class="grade-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h4>الصف الثاني الثانوي</h4>
+                    <p>شرح عميق لمنهج اللغة العربية (علمي - أدبي - أزهري)</p>
+                    <a href="#booking" class="btn btn-primary">احجز الآن</a>
+                </div>
+                
+                <div class="grade-card">
+                    <div class="grade-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>الصف الثالث الثانوي</h4>
+                    <p>إعداد شامل لامتحان الثانوية العامة (عام - أزهري) في اللغة العربية</p>
+                    <a href="#booking" class="btn btn-primary">احجز الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section-padding booking-section" id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>حجز درس</h2>
+                <p>املأ النموذج التالي وسيتم التواصل معك خلال 24 ساعة لتأكيد الحجز</p>
+            </div>
+            
+            <form class="booking-form" id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentName">اسم الطالب بالكامل *</label>
+                        <input type="text" id="studentName" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="parentName">اسم ولي الأمر *</label>
+                        <input type="text" id="parentName" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف *</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="مثال: 01157927970">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="educationType">نظام التعليم *</label>
+                        <select id="educationType" class="form-control" required>
+                            <option value="">اختر نظام التعليم</option>
+                            <option value="نظام التعليم العام">نظام التعليم العام</option>
+                            <option value="نظام التعليم الأزهري">نظام التعليم الأزهري</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="grade">الصف الدراسي *</label>
+                        <select id="grade" class="form-control" required>
+                            <option value="">اختر الصف الدراسي</option>
+                            <option value="الصف الأول الإعدادي">الصف الأول الإعدادي</option>
+                            <option value="الصف الثاني الإعدادي">الصف الثاني الإعدادي</option>
+                            <option value="الصف الثالث الإعدادي">الصف الثالث الإعدادي</option>
+                            <option value="الصف الأول الثانوي">الصف الأول الثانوي</option>
+                            <option value="الصف الثاني الثانوي">الصف الثاني الثانوي</option>
+                            <option value="الصف الثالث الثانوي">الصف الثالث الثانوي</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lessonType">نوع الدرس *</label>
+                        <select id="lessonType" class="form-control" required>
+                            <option value="">اختر نوع الدرس</option>
+                            <option value="درس فردي">درس فردي (طالب واحد)</option>
+                            <option value="درس جماعي">درس جماعي (مجموعة صغيرة)</option>
+                            <option value="مراجعة نهائية">مراجعة نهائية قبل الامتحان</option>
+                            <option value="أونلاين">درس أونلاين عبر الإنترنت</option>
+                            <option value="حضوري">درس حضوري (وجهًا لوجه)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">ملاحظات إضافية (اختياري)</label>
+                    <textarea id="notes" class="form-control" placeholder="أي ملاحظات إضائية تريد إضافتها مثل المواعيد المناسبة لك، المشاكل الدراسية التي تواجهها، إلخ..."></textarea>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> إرسال طلب الحجز إلى البوت
+                    </button>
+                    <div class="loading-spinner" id="loadingSpinner"></div>
+                </div>
+                
+                <div id="responseMessage" class="response-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-padding contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>تواصل معنا</h2>
+                <p>يمكنك التواصل مع الأستاذ محمود صلاح عبر أي من الوسائل التالية</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-card">
+                    <div class="contact-icon-large">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h4>اتصل بنا</h4>
+                    <p>للحجز والاستفسارات</p>
+                    <a href="tel:01157927970">01157927970</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon-large">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h4>واتساب</h4>
+                    <p>راسلنا مباشرة على واتساب</p>
+                    <a href="https://wa.me/201157927970">+201157927970</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon-large">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <h4>تلجرام</h4>
+                    <p>تواصل مع الأستاذ مباشرة</p>
+                    <a href="https://t.me/Yazar_7">@Yazar_7</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>دروس اللغة العربية</h4>
+                    <p>منصة متخصصة لتقديم دروس اللغة العربية للمراحل الدراسية (نظام عام - نظام أزهري) مع الأستاذ محمود صلاح.</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/201157927970" class="social-icon" title="واتساب">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://t.me/Yazar_7" class="social-icon" title="تلجرام">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">عن الأستاذ</a></li>
+                        <li><a href="#subjects">المادة الدراسية</a></li>
+                        <li><a href="#grades">المستويات</a></li>
+                        <li><a href="#booking">حجز درس</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>معلومات الاتصال</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> <a href="tel:01157927970">01157927970</a></li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/201157927970">+201157927970</a></li>
+                        <li><i class="fab fa-telegram"></i> <a href="https://t.me/Yazar_7">@Yazar_7</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 جميع الحقوق محفوظة - دروس اللغة العربية مع الأستاذ محمود صلاح</p>
+                <p class="developer-credit">تم التصميم والتطوير من قبل <a href="tel:01121018575">إياد علاء</a> | التواصل مع المطور: 01121018575</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Handle image loading
+        const teacherPhoto = document.getElementById('teacherPhoto');
+        teacherPhoto.onerror = function() {
+            // If image fails to load, show placeholder
+            this.onerror = null;
+            this.src = 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+            this.alt = 'صورة الأستاذ - صورة افتراضية';
+        };
+        
+        // Telegram Bot Configuration
+        const TELEGRAM_BOT_TOKEN = '6506189895:AAEwRi0WpBXi3pQ91MAkz8JcsS64v6R5voE';
+        const TELEGRAM_CHAT_ID = '6895524607';
+        
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const responseMessage = document.getElementById('responseMessage');
+            
+            // Show loading spinner
+            submitBtn.style.display = 'none';
+            loadingSpinner.style.display = 'block';
+            responseMessage.style.display = 'none';
+            
+            try {
+                // جمع البيانات من النموذج
+                const bookingData = {
+                    studentName: document.getElementById('studentName').value,
+                    parentName: document.getElementById('parentName').value,
+                    phone: document.getElementById('phone').value,
+                    educationType: document.getElementById('educationType').value,
+                    grade: document.getElementById('grade').value,
+                    lessonType: document.getElementById('lessonType').value,
+                    notes: document.getElementById('notes').value || 'لا توجد ملاحظات',
+                    timestamp: new Date().toLocaleString('ar-EG'),
+                    teacherName: "الأستاذ محمود صلاح"
+                };
+                
+                // إعداد رسالة للحجز
+                const message = `
+🎓 *طلب حجز درس لغة عربية جديد* 🎓
+
+*📌 اسم الطالب:* ${bookingData.studentName}
+*👨‍👦 ولي الأمر:* ${bookingData.parentName}
+*📞 رقم الهاتف:* ${bookingData.phone}
+*📚 نظام التعليم:* ${bookingData.educationType}
+*🏫 الصف الدراسي:* ${bookingData.grade}
+*🎯 نوع الدرس:* ${bookingData.lessonType}
+*🗒️ الملاحظات:* ${bookingData.notes}
+*👨‍🏫 الأستاذ:* ${bookingData.teacherName}
+*⏰ وقت الطلب:* ${bookingData.timestamp}
+
+*📱 للتواصل مع الطالب:*
+واتساب: https://wa.me/${bookingData.phone.replace(/\D/g, '')}
+هاتف: tel:${bookingData.phone}
+                `.trim();
+                
+                // إرسال البيانات إلى بوت تلجرام
+                const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                
+                const response = await fetch(telegramUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                // Hide loading spinner
+                loadingSpinner.style.display = 'none';
+                submitBtn.style.display = 'inline-block';
+                
+                if (result.ok) {
+                    // عرض رسالة نجاح
+                    responseMessage.className = 'response-message success';
+                    responseMessage.innerHTML = `
+                        <i class="fas fa-check-circle fa-2x"></i>
+                        <h3 style="margin: 15px 0;">تم إرسال طلب الحجز بنجاح إلى البوت!</h3>
+                        <p>تم إرسال طلبك إلى بوت تلجرام وسيتم التواصل معك خلال 24 ساعة.</p>
+                        <p><strong>رقم طلبك:</strong> #${Math.floor(100000 + Math.random() * 900000)}</p>
+                        <p style="margin-top: 15px;"><strong>تفاصيل الإرسال:</strong><br>
+                        ✅ تم الإرسال إلى بوت تلجرام بنجاح<br>
+                        📨 تم استلام الطلب بواسطة النظام</p>
+                        <p style="margin-top: 15px;">يمكنك التواصل مباشرة مع الأستاذ محمود صلاح:<br>
+                        <i class="fab fa-whatsapp"></i> واتساب: <a href="https://wa.me/201157927970" style="color: #22543d; font-weight: bold;">+201157927970</a><br>
+                        <i class="fas fa-phone"></i> هاتف: <a href="tel:01157927970" style="color: #22543d; font-weight: bold;">01157927970</a></p>
+                    `;
+                    responseMessage.style.display = 'block';
+                    
+                    // مسح النموذج
+                    document.getElementById('bookingForm').reset();
+                    
+                    // تسجيل البيانات في الكونسول للعرض
+                    console.log('✅ تم إرسال الطلب بنجاح إلى تلجرام');
+                    console.log('📊 بيانات الحجز المرسلة:', bookingData);
+                    console.log('🤖 رد تلجرام:', result);
+                } else {
+                    throw new Error('فشل إرسال الطلب إلى تلجرام');
+                }
+                
+            } catch (error) {
+                console.error('❌ خطأ في إرسال الطلب:', error);
+                
+                // Hide loading spinner
+                loadingSpinner.style.display = 'none';
+                submitBtn.style.display = 'inline-block';
+                
+                // عرض رسالة خطأ
+                responseMessage.className = 'response-message error';
+                responseMessage.innerHTML = `
+                    <i class="fas fa-exclamation-circle fa-2x"></i>
+                    <h3 style="margin: 15px 0;">حدث خطأ في إرسال الطلب!</h3>
+                    <p>تعذر إرسال الطلب إلى بوت تلجرام. يرجى المحاولة مرة أخرى أو التواصل مباشرة.</p>
+                    <p style="margin-top: 15px;">يمكنك التواصل مباشرة مع الأستاذ محمود صلاح:<br>
+                    <i class="fab fa-whatsapp"></i> واتساب: <a href="https://wa.me/201157927970" style="color: #742a2a; font-weight: bold;">+201157927970</a><br>
+                    <i class="fas fa-phone"></i> هاتف: <a href="tel:01157927970" style="color: #742a2a; font-weight: bold;">01157927970</a><br>
+                    <i class="fab fa-telegram"></i> تلجرام: <a href="https://t.me/Yazar_7" style="color: #742a2a; font-weight: bold;">@Yazar_7</a></p>
+                `;
+                responseMessage.style.display = 'block';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to nav links on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
